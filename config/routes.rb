@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   
   get "attractions/:id", to: "attractions#show", as: :attraction
 
+  resources :users, only: [:new, :create]
+  
 end
  
