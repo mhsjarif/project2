@@ -1,0 +1,2 @@
+class Unhelpful < ApplicationRecord
+end
