@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-    has_many :attractions
+    has_many :attractions, dependent: :destroy
 end
