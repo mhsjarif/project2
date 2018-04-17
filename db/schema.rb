@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417045034) do
+ActiveRecord::Schema.define(version: 20180417193823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20180417045034) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "genre"
   end
 
   create_table "helpfuls", force: :cascade do |t|
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20180417045034) do
     t.integer "rating"
     t.boolean "recommend"
     t.datetime "updated_at", null: false
+    t.bigint "attraction_id"
+    t.index ["attraction_id"], name: "index_reviews_on_attraction_id"
   end
 
   create_table "unhelpfuls", force: :cascade do |t|
@@ -64,4 +66,5 @@ ActiveRecord::Schema.define(version: 20180417045034) do
   end
 
   add_foreign_key "attractions", "categories"
+  add_foreign_key "reviews", "attractions"
 end
