@@ -1,7 +1,11 @@
 <h1>Categories Landing page</h1>
 
 <% @categories.each do |category| %>
-<h3><%= link_to(category.genre, category_path(category)) %></h3>
+<div class="row">
+    <div class="col s6">
+        <h3><%= link_to(category.genre, category_path(category)) %></h3>
+    </div>
+</div>
 <% end %>
 <a href="/attractions">
   <button class="btn waves-effect waves-light" type="submit" name="action">all attractions >>

@@ -9,9 +9,9 @@
 Attraction.destroy_all
 Category.destroy_all
 
-thrill = Category.create(genre: "Thrill")
-family = Category.create(genre: "Family")
-youngster = Category.create(genre: "Youngster")
+thrill = Category.create(genre: "Thrill", image: "./app/assets/images/thrill.jpg")
+family = Category.create(genre: "Family", image: "./app/assets/images/family1.jpg")
+youngster = Category.create(genre: "Youngster", image: ".app/assets/images/youngster1.jpg")
 
 Attraction.create([
     {name: "Alice in Wonderland", category: youngster, ride_image: "https://secure.cdn1.wdpromedia.com/resize/mwImage/1/630/354/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/alice-in-wonderland/alice-in-wonderland-00.jpg?1522367986449", description: "Journey down an enchanted rabbit hole into the topsy-turvy realm of Wonderland. Hop atop a king-sized Caterpillar and follow the White Rabbit into the nonsensical realm made famous in the beloved animated movie."},
