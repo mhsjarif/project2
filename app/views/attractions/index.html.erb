@@ -1,4 +1,33 @@
 <h1>All Attractions page</h1>
-<% @attractions.each do |attraction| %>
-<div><%= link_to(attraction.name, attraction_path(attraction)) %></div>
-<% end %>
+
+
+
+
+      <table class="highlight">
+        <thead>
+          <tr>
+              <th>Attraction</th>
+              <th>Category</th>
+              <th>Rating</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @attractions.each do |attraction| %>
+          <tr>
+            <td><%= link_to(attraction.name, attraction_path(attraction)) %></td>
+          </tr>
+            <% end %>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+            
