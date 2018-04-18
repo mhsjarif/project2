@@ -1,9 +1,8 @@
 <h1>Categories Landing page</h1>
 
-<a href="/categories/thrill"><h2>Thrill Seeker</h2></a>
-
-<a href="/categories/family"><h2>Family</h2></a>
-
-<a href="/categories/youngster"><h2>Youngsters</h2></a>
+<% @categories.each do |category| %>
+<h3><%= link_to(category.genre, category_path(category)) %></h3>
+<% end %>
 
 <a href="/attractions"><p>all attractions -></p></a>
+
