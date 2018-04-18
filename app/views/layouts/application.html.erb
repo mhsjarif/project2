@@ -14,7 +14,7 @@
     <nav>
       <div class="nav-wrapper light-blue darken-4">
         <a href="/" class="brand-logo">is it fun?</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul id="nav" class="right">
           <% if current_user %>
             <li>Welcome, </li>
             <li><%= link_to current_user.name, user_path(current_user) %></li>
