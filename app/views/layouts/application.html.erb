@@ -14,7 +14,7 @@
   <a href="/"><h1>is it fun?</h1></a>
     <p>
       <% if current_user %>
-        Welcome, <a href="/users/:id"><%= current_user.name %></a>
+        Welcome, <a href="/users/:id"><%= link_to(current_user.name, user_path(current_user)) %></a>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <%= link_to "Log Out", session_path("dummy"), method: :delete %>
       <% else %>

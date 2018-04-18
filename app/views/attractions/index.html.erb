@@ -1,1 +1,4 @@
 <h1>All Attractions page</h1>
+<% @attractions.each do |attraction| %>
+<div><%= link_to(attraction.name, attraction_path(attraction)) %></div>
+<% end %>

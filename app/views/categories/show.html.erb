@@ -1,2 +1,6 @@
 <h1>Specific Category Page</h1>
 <h1><%= @category.genre %></h1>
+
+<% @attractions.each do |attraction| %>
+<div><%= link_to(attraction.name, attraction_path(attraction)) %></div>
+<% end %>
