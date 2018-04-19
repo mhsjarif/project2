@@ -14,6 +14,25 @@
  *= require_self
  */
 
+.category-container {
+    display: flex;
+    justify-content: center;
+}
 
-.attraction {
+.category {
+    height: 500px;
+    width: 25%;
+    margin: 10px;
+    border: 1px solid #666;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+}
+
+#landing-greeting {
+    text-align: center;
+}
+
+#all-attractions {
+    text-align: center;
 }
