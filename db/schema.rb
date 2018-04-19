@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418192212) do
+ActiveRecord::Schema.define(version: 20180419021226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20180418192212) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.index ["category_id"], name: "index_attractions_on_category_id"
+  end
+
+  create_table "avatars", force: :cascade do |t|
+    t.string "avatar_name"
+    t.string "avatar_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -47,7 +54,9 @@ ActiveRecord::Schema.define(version: 20180418192212) do
     t.boolean "recommend"
     t.datetime "updated_at", null: false
     t.bigint "attraction_id"
+    t.bigint "user_id"
     t.index ["attraction_id"], name: "index_reviews_on_attraction_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "unhelpfuls", force: :cascade do |t|
@@ -68,4 +77,5 @@ ActiveRecord::Schema.define(version: 20180418192212) do
 
   add_foreign_key "attractions", "categories"
   add_foreign_key "reviews", "attractions"
+  add_foreign_key "reviews", "users"
 end
