@@ -1,12 +1,13 @@
-<h1>Specific Category Page</h1>
-<h1><%= @category.genre %></h1>
+
+<h1><%= @category.genre %> Attractions</h1>
 
   <div class="row attraction">
 <% @attractions.each do |attraction| %>
     <div class="col s6 m4">
       <div class="card">
       <div class="card-action">
-          <a href="#"><%= link_to(attraction.name, attraction_path(attraction)) %></a>
+          <h6 class="truncate"><a href="#" class="truncate"><%= link_to(attraction.name, attraction_path(attraction)) %></a>
+          </h6>
         </div>
         <div class="card-image">
           <img src="<%= attraction.ride_image %>">

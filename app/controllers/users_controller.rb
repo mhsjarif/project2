@@ -14,12 +14,17 @@ class UsersController < ApplicationController
         else
             render :new
         end
+        @user = User.update(user_params)
     end
 
     def show
         @user = User.find(params[:id])
     end
 
+    def edit
+        @user = current_user
+        @avatars = Avatar.all
+    end
 private
 
     def user_params

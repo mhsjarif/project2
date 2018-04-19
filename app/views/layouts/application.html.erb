@@ -3,13 +3,12 @@
   <head>
     <title>Is It Fun?</title>
     <%= csrf_meta_tags %>
-
+    <script defer src="https://code.jquery.com/jquery-3.2.1.min.js"integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </head>
 
   <body>
@@ -21,6 +20,7 @@
           <% if current_user %>
             <li>Welcome, </li>
             <li><%= link_to current_user.name, user_path(current_user) %></li>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user)%></li>
             <li><%= link_to "Log Out", session_path("dummy"), method: :delete %></li>
           <% else %>
             <li><%= link_to "Log In", login_path %></li>
@@ -28,6 +28,7 @@
           <% end %>
         </ul>
       </div>
+      
     </nav>
 
 
@@ -35,4 +36,5 @@
    
   </body>
 </html>
+
 

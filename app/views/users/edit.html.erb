@@ -1,0 +1,30 @@
+<h1>Edit Profile</h1>
+<%= form_for @user do |f| %>
+    
+    <div class="field">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+    </div>
+
+    <div class="input-field col s12 m6">
+        <select class="icons" name="avatar_id">
+            <option value="" disabled selected>Who's your favorite Disney character?</option>
+            <% @avatars.each do |avatar| %>
+                <option value="<%= avatar.id %>" data-icon="<%= avatar.avatar_image %>"><%= avatar.avatar_name %></option>
+            <% end %>
+        </select>
+    </div>
+
+    <div class="actions">
+        <button class="btn waves-effect light-blue darken-4" type="submit" name="action">
+            <%= f.submit %>
+        </button>
+    </div>
+<% end %>
+
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>

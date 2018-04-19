@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/category/:id", to: "categories#show"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :edit]
 
   resources :sessions, only: [:new, :create, :destroy]
   get "/login", to: "sessions#new"
@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   resources :attractions, only: [:show, :index] do
     resources :reviews, except: [:new, :show, :index], shallow: true
   end
-
-  
 
 end
  

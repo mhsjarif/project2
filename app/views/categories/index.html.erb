@@ -4,7 +4,7 @@
     <p>Which type of rider are you?</p>
 <div class="category-container">
 <% @categories.each do |category| %>
-    <div class="category z-depth-3" style="background-image:url('<%= image_url(category.image) %>')">
+    <div class="category z-depth-3" style="background-image:url('<%= category.image %>')">
         <h3><%= link_to(category.genre, category_path(category)) %></h3>
     </div>
 <% end %>
