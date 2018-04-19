@@ -22,9 +22,27 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation %>
     </div>
+
+
     <div class="actions">
         <button class="btn waves-effect waves-light" type="submit" name="action">
             <%= f.submit %>
         </button>
     </div>
 <% end %>
+
+<div class="input-field col s12 m6">
+    <select class="icons">
+    <option value="" disabled selected>Who's your favorite Disney character?</option>
+    <% @avatars.each do |avatar| %>
+    <option value="" data-icon="<%= avatar.avatar_image %>"><%= avatar.avatar_name %></option>
+    <% end %>
+    </select>
+    <label>Images in select</label>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>

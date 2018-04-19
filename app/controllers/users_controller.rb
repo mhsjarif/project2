@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     def new
         @user = User.new
+        @avatars = Avatar.all
     end
 
     def create 
