@@ -1,14 +1,14 @@
-
+<div id="a-page">
 <h3><%= @attraction.name %></h3>
-<div>
+<div id="a-image">
     <img src="<%= @attraction.ride_image %>">
 </div>
 <div>
     <%= @attraction.description %>
 </div>
 
-<h1>REVIEW TIME</h1>
-
+<div id="new-review">
+<h5>Well? Was it fun? Write your review...</h5>
 <%= form_for [@attraction, @review] do |f| %>
     <div class="field">
         <%= f.label :content %>
@@ -18,18 +18,23 @@
         <%= f.label :rating %>
         <%= f.text_field :rating %>
     </div>
+    
     <div class="field">
         <%= f.label :recommend %>
         <%= f.text_field :recommend %>
-    </div>
+  </div>
     <button class="btn waves-effect waves-light" type="submit" name="action">
     Submit
     </button>
 <% end %>
-<h3>REVIEWS</h3>
-<% @attraction.reviews.each do |review| %>
-<h4>
-    "<%= review.content %>" - <%= review.user.name %> <%= review.user.created_at.strftime("%m/%d/%y") %>
-    <%= link_to "Delete", review_path(review), method: "delete" if review.user == current_user %>
-</h4>
-<% end %>
+</div>
+    <div id="all-reviews">
+        <h3>REVIEWS</h3>
+        <% @attraction.reviews.each do |review| %>
+            <h4>
+                "<%= review.content %>" - <%= review.user.name %> <%= review.user.created_at.strftime("%m/%d/%y") %>
+                <%= link_to "Delete", review_path(review), method: "delete" if review.user == current_user %>
+            </h4>
+        <% end %>
+    </div>
+</div>

@@ -15,7 +15,14 @@
  */
 
 
+* {
+    font-family: 'Mouse Memoirs', sans-serif;
+}
 
+body {
+    background-image: url("https://i.imgur.com/hU98e8J.jpg");
+    background-size: 10%;
+}
 .category-container {
     display: flex;
     justify-content: center;
@@ -33,6 +40,33 @@
 
 #landing-greeting {
     text-align: center;
+}
+
+.nav-wrapper img {
+    height: 62px;
+    width: 62px;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#new-review {
+    max-width: 70%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+#a-page, #a-image {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+#all-reviews {
+    margin: 500 500 500 500;
 }
 
 

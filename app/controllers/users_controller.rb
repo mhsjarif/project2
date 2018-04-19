@@ -25,6 +25,12 @@ class UsersController < ApplicationController
         @user = current_user
         @avatars = Avatar.all
     end
+
+    def update
+        @user = User.find(params[:id])
+        @user.update_attributes(params.require(:user).permit(:location, :avatar_id))
+        redirect_to user_path(@user)
+    end
 private
 
     def user_params

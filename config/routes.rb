@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/category/:id", to: "categories#show"
 
-  resources :users, only: [:new, :create, :show, :edit]
+  resources :users, only: [:new, :create, :show, :edit, :update]
 
   resources :sessions, only: [:new, :create, :destroy]
   get "/login", to: "sessions#new"
