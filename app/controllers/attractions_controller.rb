@@ -6,5 +6,6 @@ class AttractionsController < ApplicationController
 
     def show
         @attraction = Attraction.find(params[:id])
+        @review = Review.new
     end
 end

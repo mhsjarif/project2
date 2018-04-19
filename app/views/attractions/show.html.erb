@@ -8,3 +8,27 @@
 </div>
 
 <h1>REVIEW TIME</h1>
+
+<%= form_for [@attraction, @review] do |f| %>
+    <div class="field">
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+    </div>
+    <div class="field">
+        <%= f.label :rating %>
+        <%= f.text_field :rating %>
+    </div>
+    <div class="field">
+        <%= f.label :recommend %>
+        <%= f.text_field :recommend %>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+    Submit
+    </button>
+<% end %>
+<h3>REVIEWS</h3>
+<% @attraction.reviews.each do |review| %>
+<h4>
+    "<%= review.content %>" - <%= review.user.name %> <%= review.user.created_at.strftime("%m/%d/%y") %>
+</h4>
+<% end %>

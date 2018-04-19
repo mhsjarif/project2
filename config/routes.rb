@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
 
-  resources :attractions, only: [:show, :index]
+  resources :attractions, only: [:show, :index] do
+    resources :reviews, except: [:new, :show, :index], shallow: true
+  end
 
   
 
