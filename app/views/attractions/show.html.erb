@@ -30,5 +30,6 @@
 <% @attraction.reviews.each do |review| %>
 <h4>
     "<%= review.content %>" - <%= review.user.name %> <%= review.user.created_at.strftime("%m/%d/%y") %>
+    <%= link_to "Delete", review_path(review), method: "delete" if review.user == current_user %>
 </h4>
 <% end %>

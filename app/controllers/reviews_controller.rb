@@ -7,6 +7,12 @@ class ReviewsController < ApplicationController
         redirect_to attraction_path(params[:attraction_id])
     end
 
+    def destroy
+        @review = Review.find(params[:id])
+        @review.destroy 
+        redirect_to attraction_path(@review.attraction_id)
+    end
+
     private
         def review_params
             params.require(:review).permit(:rating, :content, :recommend)
