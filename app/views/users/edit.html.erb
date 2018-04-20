@@ -1,26 +1,24 @@
 <div class="form-page">
-<h1>Edit Profile</h1>
-<div class="user-form">
-<%= form_for @user do |f| %>
-    <div class="field">
-        <%= f.label :location %>
-        <%= f.text_field :location %>
-    </div>
-
-    <div class="input-field col s12 m6">
-        <%= select(:user, :avatar_id, class: "icons") do %>
-            <option value="" disabled selected>Who's your favorite Disney character?</option>
-            <% @avatars.each do |avatar| %>
-                <option value="<%= avatar.id %>" <%= @user.avatar == avatar ? ' selected ' : '' %> data-icon="<%= avatar.avatar_image %>"><%= avatar.avatar_name %></option>
-            <% end %>
+    <h1>Edit Profile</h1>
+    <div class="user-form">
+        <%= form_for @user do |f| %>
+            <div class="field">
+                <%= f.label :location %>
+                <%= f.text_field :location %>
+            </div>
+            <div class="input-field col s12 m6">
+                <%= select(:user, :avatar_id, class: "icons") do %>
+                    <option value="" disabled selected>Who's your favorite Disney character?</option>
+                    <% @avatars.each do |avatar| %>
+                        <option value="<%= avatar.id %>" <%= @user.avatar == avatar ? ' selected ' : '' %> data-icon="<%= avatar.avatar_image %>"><%= avatar.avatar_name %></option>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="actions">
+                <button class="btn waves-effect light-blue darken-4" type="submit" name="action">
+                    <%= f.submit %>
+                </button>
+            </div>
         <% end %>
     </div>
-
-    <div class="actions">
-        <button class="btn waves-effect light-blue darken-4" type="submit" name="action">
-            <%= f.submit %>
-        </button>
-    </div>
-<% end %>
-</div>
 </div>

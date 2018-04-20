@@ -5,24 +5,18 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js', 'data-turbolinks-track': 'reload' %>
-
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>
-
-
   </head>
-
   <body>
-
     <nav>
       <div class="nav-wrapper light-blue darken-4">
         <ul id="nav" class="left">
-        <li><a href="/" class="brand-logo">is it fun?</a></li>
-        <li><%= link_to image_tag("https://image.flaticon.com/icons/svg/1/1010.svg"), root_path %></li>
+          <li><a href="/" class="brand-logo">is it fun?</a></li>
+          <li><%= link_to image_tag("https://image.flaticon.com/icons/svg/1/1010.svg"), root_path %></li>
         </ul>
         <ul id="nav" class="right">
           <% if current_user %>
@@ -35,13 +29,9 @@
             <li><%= link_to "Sign Up", new_user_path, :data => { turbolinks: false } %></li>
           <% end %>
         </ul>
-      </div>
-      
+      </div>  
     </nav>
-
-
-    <%= yield %>
-   
+    <%= yield %> 
   </body>
 </html>
 

@@ -2,17 +2,17 @@
     <h3>is it fun?</h3>
     <h5>Check out which rides are fun and share your experience</h5>
     <p>Which type of rider are you?</p>
-<div class="category-container">
-<% @categories.each do |category| %>
-    <div class="category z-depth-3" style="background-image:url('<%= category.image %>')">
-        <h3><%= link_to(category.genre, category_path(category)) %></h3>
+    <div class="category-container">
+        <% @categories.each do |category| %>
+            <div class="category z-depth-3" style="background-image:url('<%= category.image %>')">
+                <h3><%= link_to(category.genre, category_path(category)) %></h3>
+            </div>
+        <% end %>
     </div>
-<% end %>
-</div>
-<a href="/attractions">
-  <button class="btn waves-effect light-blue darken-4" type="submit" name="action">all attractions >>
-  </button>
-</a>
+    <a href="/attractions">
+    <button class="btn waves-effect light-blue darken-4" type="submit" name="action">all attractions >>
+    </button>
+    </a>
 </div>
 
 
