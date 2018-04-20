@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
     def create
+        puts "HELLO", review_params
         @review = Review.new(review_params)
+        @review.rating = params[:rating]
+        @review.recommend = params[:recommend]
         @review.user = current_user
         @review.attraction_id = params[:attraction_id]
         @review.save
@@ -15,6 +18,6 @@ class ReviewsController < ApplicationController
 
     private
         def review_params
-            params.require(:review).permit(:rating, :content, :recommend)
+            params.require(:review).permit(:content, :rating, :recommend)
         end
 end

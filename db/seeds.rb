@@ -63,7 +63,7 @@ Attraction.create([
 ])
 
 Avatar.create([
-    {avatar_name: "Aladin", avatar_image: "https://i.imgur.com/OmdjZLD.png"},
+    {avatar_name: "Aladdin", avatar_image: "https://i.imgur.com/OmdjZLD.png"},
     {avatar_name: "Alice", avatar_image: "https://i.imgur.com/kEAkcx9.png"},
     {avatar_name: "Aliens", avatar_image: "https://i.imgur.com/q5jlQPz.png"},
     {avatar_name: "Anna", avatar_image: "https://i.imgur.com/cATdrpH.png"},
@@ -122,7 +122,7 @@ Avatar.create([
     {avatar_name: "Tow Mater", avatar_image: "https://i.imgur.com/T03jvn0.png"},
     {avatar_name: "Ursula", avatar_image: "https://i.imgur.com/a1oYilz.png"},
     {avatar_name: "WALL-E", avatar_image: "https://i.imgur.com/v3lFR1e.png"},
-    {avatar_name: "Winnie The Poo", avatar_image: "https://i.imgur.com/gsXBTlO.png"},
+    {avatar_name: "Winnie The Pooh", avatar_image: "https://i.imgur.com/gsXBTlO.png"},
     {avatar_name: "Woody", avatar_image: "https://i.imgur.com/VKxBfOC.png"},
     {avatar_name: "Yoda", avatar_image: "https://i.imgur.com/ivzCSiW.png"}
 ])

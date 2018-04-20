@@ -14,15 +14,27 @@
         <%= f.label :content %>
         <%= f.text_field :content %>
     </div>
-    <div class="field">
-        <%= f.label :rating %>
-        <%= f.text_field :rating %>
+    <div class="input-field col s12 m6 field">
+        <select name="rating">
+            <option value="" disabled selected>Rate this ride!</option>
+            <option value="1">★</option>
+            <option value="2">★★</option>
+            <option value="3">★★★</option>
+            <option value="4">★★★★</option>
+            <option value="5">★★★★★</option>
+        </select>
     </div>
-    
-    <div class="field">
-        <%= f.label :recommend %>
-        <%= f.text_field :recommend %>
-  </div>
+    <p>Would you recommend this attraction?</p>
+    <p class="field">
+      <label>
+        <input name="recommend" type="radio" value="true" />
+        <span>Yes</span>
+      </label>
+      <label>
+        <input name="recommend" type="radio" value="false" />
+        <span>No</span>
+      </label>
+    </p>
     <button class="btn waves-effect waves-light" type="submit" name="action">
     Submit
     </button>
@@ -30,9 +42,9 @@
 </div>
     <div id="all-reviews">
         <h3>REVIEWS</h3>
-        <% @attraction.reviews.each do |review| %>
+        <% @attraction.reviews.reverse.each do |review| %>
             <h4>
-                "<%= review.content %>" - <%= review.user.name %> <%= review.user.created_at.strftime("%m/%d/%y") %>
+                "<%= review.recommend %>" - <%= review.user.name %> <%= review.user.created_at.strftime("%m/%d/%y") %>
                 <%= link_to "Delete", review_path(review), method: "delete" if review.user == current_user %>
             </h4>
         <% end %>
