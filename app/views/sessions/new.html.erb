@@ -1,4 +1,6 @@
+<div class="form-page">
 <h1>Log In</h1>
+<div class="user-form">
 <p id="alert"><%= alert %></p>
 <%= form_tag sessions_path do %>
     <div class="field">
@@ -9,6 +11,11 @@
         <%= label_tag :password %>
         <%= password_field_tag :password %>
     </div>
-    <div class="actions"><%= submit_tag "Log In" %></div>
+    <div class="actions">    
+        <button class="btn waves-effect light-blue darken-4" type="submit" name="action">
+            <%= submit_tag "Log In" %>    
+        </button>
+    </div>
 <% end %>
-    
+</div>
+</div>

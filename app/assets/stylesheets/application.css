@@ -143,12 +143,14 @@ th, td {
 
 button {
     border-radius: 10px !important;
-    font-family: 'Mouse Memoirs', sans-serif;
+    font-family: 'Mouse Memoirs', sans-serif !important;
     font-size: 20px !important;
 }
 
 button input {
     color: white;
+    font-family: 'Mouse Memoirs', sans-serif !important;  
+    font-size: 20px !important;      
 }
 
 .profile-container {
@@ -197,3 +199,22 @@ button input {
     color:#215696 !important;
     font-size: 20px;
 }
+
+.form-page {
+    text-align: center;
+}
+
+.user-form {
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.user-form .actions {
+    text-align: center;
+}
+
