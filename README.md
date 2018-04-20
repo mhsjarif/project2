@@ -1,24 +1,19 @@
-# README
+# is it fun?
+is it fun? is a Disneyland attraction rate and review application, conceptualized with the clueless amusement park goer in mind. Create an account and review your favorite rides for all users to see!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![is it fun? 1](https://i.imgur.com/ppLvH40.png)
+![is it fun? 2](https://i.imgur.com/GIGeBjP.png)
 
-Things you may want to cover:
+# Technologies Used
+* Ruby on Rails
+* Materialize
+* HTML5
+* CSS3
 
-* Ruby version
+# Getting Started
+[is it fun? on Heroku](https://isitfun.herokuapp.com/)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Next Steps
+* Add dynamic visual stars for rating selection and average attraction ratings.
+* Add Admin
+* Let users select whether other user reviews were helpful or not.
