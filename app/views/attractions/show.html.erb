@@ -1,20 +1,27 @@
 <div id="a-page">
-<h3><%= @attraction.name %></h3>
+<div class="a-head">
+<h3><%= @attraction.name %>
+<span style="position:absolute; right:18%">
+    <%= @attraction.tcount %>
+    <i class="material-icons">thumb_up</i>
+    <%= @attraction.fcount %>
+    <i class="material-icons">thumb_down</i>
+</span></h3>
 <div id="a-image">
     <img src="<%= @attraction.ride_image %>">
 </div>
-<div>
+<div id="a-description">
     <%= @attraction.description %>
 </div>
-
+</div>
 <div id="new-review">
 <h5>Well? Was it fun? Write your review...</h5>
 <%= form_for [@attraction, @review] do |f| %>
-    <div class="field">
-        <%= f.label :content %>
+    <div class="field rf-content">
         <%= f.text_field :content %>
     </div>
-    <div class="input-field col s12 m6 field">
+    <div class"rf-options" style="display:flex">
+    <div class="input-field col s12 m6 field stars">
         <select name="rating">
             <option value="" disabled selected>Rate this ride!</option>
             <option value="1">★</option>
@@ -24,6 +31,7 @@
             <option value="5">★★★★★</option>
         </select>
     </div>
+    <div class="wyr">
     <p>Would you recommend this attraction?</p>
     <p class="field">
       <label>
@@ -35,18 +43,31 @@
         <span>No</span>
       </label>
     </p>
-    <button class="btn waves-effect waves-light" type="submit" name="action">
+    </div>
+    </div>
+    <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">
     Submit
     </button>
 <% end %>
 </div>
     <div id="all-reviews">
-        <h3>REVIEWS</h3>
+        <h3>REVIEWS <span style="font-size:24px">(<%= @attraction.reviews.length %> reviews)</span></h3>
         <% @attraction.reviews.reverse.each do |review| %>
-            <h4>
-                "<%= review.recommend %>" - <%= review.user.name %> <%= review.user.created_at.strftime("%m/%d/%y") %>
-                <%= link_to "Delete", review_path(review), method: "delete" if review.user == current_user %>
-            </h4>
+        <div class="review">
+            <div>
+                <%= link_to review.user.name, user_path(review.user) %> &nbsp;gave this attraction&nbsp;
+                <%= "★" if review.rating == 1 %>
+                <%= "★★" if review.rating == 2 %>
+                <%= "★★★" if review.rating == 3 %>
+                <%= "★★★★" if review.rating == 4 %>
+                <%= "★★★★★" if review.rating == 5 %>
+                &nbsp; on <%= review.user.created_at.strftime("%m/%d/%y") %>
+                &nbsp; <%= link_to "Delete", review_path(review), method: "delete" if review.user == current_user %>                
+            </div>
+            <div>
+                "<%= review.content %>"
+            </div>
+        </div>
         <% end %>
     </div>
 </div>

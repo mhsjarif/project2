@@ -1,12 +1,12 @@
 
-<h1><%= @category.genre %> Attractions</h1>
+<h1 class="cat-name"><%= @category.genre %> Attractions</h1>
 
   <div class="row attraction">
-<% @attractions.each do |attraction| %>
+    <% @attractions.each do |attraction| %>
     <div class="col s6 m4">
       <div class="card">
       <div class="card-action">
-          <h6 class="truncate"><a href="#" class="truncate"><%= link_to(attraction.name, attraction_path(attraction)) %></a>
+          <h6 class="truncate cat-card-title"><a href="#" class="truncate"><%= link_to(attraction.name, attraction_path(attraction)) %></a>
           </h6>
         </div>
         <div class="card-image">
@@ -17,5 +17,5 @@
     </div>
 
 <% end %>
-  </div>
+</div>
 

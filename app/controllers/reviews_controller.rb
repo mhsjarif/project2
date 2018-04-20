@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
     def create
-        puts "HELLO", review_params
         @review = Review.new(review_params)
         @review.rating = params[:rating]
         @review.recommend = params[:recommend]

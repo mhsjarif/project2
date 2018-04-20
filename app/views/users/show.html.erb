@@ -1,8 +1,32 @@
-<h2><%= @user.name %></h2>
-<div>
-    <img src="<%= @user.avatar.avatar_image %>">
+
+<div class="profile-container">
+<div class="profile-info">
+    <div class="profile-name">
+        <div><%= @user.name %> from <%= @user.location %></div>
+    </div>
+    <div class="profile-image">
+        <img src="<%= @user.avatar.avatar_image %>">
+    </div>
 </div>
-<p>
-    <%= @user.location %>
-</p>
+    <div id="all-reviews" class="profile-reviews">
+        <h3>REVIEWS <span style="font-size:24px">(<%= @user.reviews.length %> reviews)</span></h3>
+        <% @user.reviews.reverse.each do |review| %>
+        <div class="review">
+            <div>
+                <%= review.user.name %> rated <%= link_to review.attraction.name, attraction_path(review.attraction) %>&nbsp;
+                <%= "★" if review.rating == 1 %>
+                <%= "★★" if review.rating == 2 %>
+                <%= "★★★" if review.rating == 3 %>
+                <%= "★★★★" if review.rating == 4 %>
+                <%= "★★★★★" if review.rating == 5 %>
+                on <%= review.user.created_at.strftime("%m/%d/%y") %>
+                &nbsp; <%= link_to "Delete", review_path(review), method: "delete" if review.user == current_user %>                
+            </div>
+            <div>
+                "<%= review.content %>"
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
 

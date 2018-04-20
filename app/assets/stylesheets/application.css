@@ -52,23 +52,148 @@ body {
     justify-content: space-between;
 }
 
-#new-review {
-    max-width: 70%;
+#a-page {
+    text-align: center;
     margin: 0 auto;
+    width: 70%;
+}
+
+.a-head {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    margin: 15px auto;    
+}
+
+.a-head h3 {
+    text-align: left;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+#a-image {
+
+}
+
+#a-image img {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+#a-description {
+    font-size: 18px;
+    padding: 10px;
+    text-align: justify;
+}
+
+#new-review {
     background-color: white;
     padding: 15px;
     border: 2px solid black;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
-#a-page, #a-image {
-    max-width: 70%;
-    margin: 0 auto;
+.rf-content input {
+    border: 1px solid black !important;
+}
+
+.stars, .wyr {
+    width: 50%;
 }
 
 #all-reviews {
-    
+    font-size: 24px;
+    text-align: left;
+    border-radius: 10px;
+    background-color: white;    
+}
+
+#all-reviews h3 {
+    margin: 10px;
+}
+
+.review {
+    padding: 10px;
+}
+
+.review div:last-child {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.highlight {
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 15px 100px !important;
+    font-size: 20px
+}
+
+#a-index-head {
+    text-align: center;
+}
+
+button {
+    border-radius: 10px !important;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 20px !important;
+}
+
+button input {
+    color: white;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
 }
 
 
+.profile-image {
+    height: 80%;
+    padding: 10px;
+}
 
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
 
+.profile-reviews {
+    width: 425px;
+    height: 500px;
+    overflow: auto;
+
+}
+
+.profile-info {
+    width: 425px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.profile-name {
+    height: 20%;
+    font-size: 48px;
+    padding: 10px;
+}
+
+.cat-name {
+    text-align: center;
+}
+
+.cat-card-title a:last-child{
+    color:#215696 !important;
+    font-size: 20px;
+}

@@ -1,34 +1,22 @@
-<h1>All Attractions page</h1>
+<h1 id="a-index-head">Attractions</h1>
+<table class="highlight">
+  <thead>
+    <tr>
+        <th>Attraction</th>
+        <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @attractions.each do |attraction| %>
+    <tr>
+      <td><%= link_to(attraction.name, attraction_path(attraction)) %></td>
+      <td><%= link_to(attraction.category.genre, category_path(attraction.category)) %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
 
 
 
 
-      <table class="highlight">
-        <thead>
-          <tr>
-              <th>Attraction</th>
-              <th>Category</th>
-              <th>Rating</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @attractions.each do |attraction| %>
-          <tr>
-            <td><%= link_to(attraction.name, attraction_path(attraction)) %></td>
-            <td><%= link_to(attraction.category.genre, category_path(attraction.category)) %></td>
-          </tr>
-            <% end %>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>
             
