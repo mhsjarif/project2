@@ -9,7 +9,7 @@
   <tbody>
     <% @attractions.each do |attraction| %>
     <tr>
-      <td><%= link_to(attraction.name, attraction_path(attraction)) %></td>
+      <td><%= link_to(attraction.name, attraction_path(attraction), :data => { turbolinks: false }) %></td>
       <td><%= link_to(attraction.category.genre, category_path(attraction.category)) %></td>
     </tr>
       <% end %>

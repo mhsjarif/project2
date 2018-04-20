@@ -13,7 +13,7 @@
         <% @user.reviews.reverse.each do |review| %>
         <div class="review">
             <div>
-                <%= review.user.name %> rated <%= link_to review.attraction.name, attraction_path(review.attraction) %>&nbsp;
+                <%= review.user.name %> rated <%= link_to review.attraction.name, attraction_path(review.attraction), :data => { turbolinks: false } %>&nbsp;
                 <%= "★" if review.rating == 1 %>
                 <%= "★★" if review.rating == 2 %>
                 <%= "★★★" if review.rating == 3 %>
