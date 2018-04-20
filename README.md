@@ -10,10 +10,14 @@ is it fun? is a Disneyland attraction rate and review application, conceptualize
 * HTML5
 * CSS3
 
+# Planning
+[is it fun? Trello page](https://trello.com/b/x5fHszOp/project-2)
+
 # Getting Started
 [is it fun? on Heroku](https://isitfun.herokuapp.com/)
 
 # Next Steps
+* Add attraction "recommend/not recommended" functionality for users.
 * Add dynamic visual stars for rating selection and average attraction ratings.
-* Add Admin
 * Let users select whether other user reviews were helpful or not.
+* Add Admin
